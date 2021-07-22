@@ -38,6 +38,8 @@
  
  You can run the script via browser by using lts-copy.php, this script uses AJAX to repeatedly pull in lts-output.txt and display the contents on the webpage. You should make sure that the permissions for lts-output.txt are sufficient for the user/group to access the file. There shouldn't be any problem setting permissions to 777 as the content of the file are wiped at the beginning and end of the process.
  
+ Make sure that www-data or whatever your web user is has write permissions to the destination folder.
+ 
  lts-output.txt is automatically created with 777 permissions and wiped once the script finishes running, so you shouldn't need to worry about creating it or setting permissions.
 
 ## Remote hosts

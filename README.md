@@ -10,28 +10,28 @@
  
 ## Storing the script
  You should keep all of the script files in the root of the directory where you wish data to be copied to.
- *lts.sh
- *lts-test.sh
- *lts-copy.php
- *lts-php.php
+ * lts.sh
+ * lts-test.sh
+ * lts-copy.php
+ * lts-php.php
  
 ## Setting variables
  Within lts.sh are variables for the source directory, desination directory, source database, destination database, and database connection details.
- *sourceDir - The absolute path to the directory you wish to copy
- *destinationDir - The absolute path to the directory you wish to copy to (This can be ignored as it defaults to the same directory as lts.sh)
- *Database connection details
-    *sourceDatabase - The name of the source database
-    *sourceUsername - The username which will connect to the database
-    *sourcePassword - The password for the user which will connect to the database
-    *sourceHost - The hostname for the database (use localhost not 127.0.0.1)
-    *destinationDatabase - As above but for the destination database
-    *destinationUsername - As above but for the destination database
-    *destinationPassword - As above but for the destination database
-    *detinationHost - As above but for the destination database
- *customSQL - Any custom queries to run on the destination database after the source finishes copying (Make sure to escape special characters)
- *excludeDirs - An array of directories NOT to be deleted from the destination directory
- *excludeFiles - An array of files NOT to be deleted from the destination directory
- *excludeRsync - An array of files and directories NOT to be copied from the source to destination
+ * sourceDir - The absolute path to the directory you wish to copy
+ * destinationDir - The absolute path to the directory you wish to copy to (This can be ignored as it defaults to the same directory as lts.sh)
+ * Database connection details
+    * sourceDatabase - The name of the source database
+    * sourceUsername - The username which will connect to the database
+    * sourcePassword - The password for the user which will connect to the database
+    * sourceHost - The hostname for the database (use localhost not 127.0.0.1)
+    * destinationDatabase - As above but for the destination database
+    * destinationUsername - As above but for the destination database
+    * destinationPassword - As above but for the destination database
+    * detinationHost - As above but for the destination database
+ * customSQL - Any custom queries to run on the destination database after the source finishes copying (Make sure to escape special characters)
+ * excludeDirs - An array of directories NOT to be deleted from the destination directory
+ * excludeFiles - An array of files NOT to be deleted from the destination directory
+ * excludeRsync - An array of files and directories NOT to be copied from the source to destination
  
 ## Running the script
  You can run the script via shell by using bash /path/to/lts.sh

@@ -51,7 +51,7 @@
  The lts-test.sh script is an exact copy of the main lts.sh script. The differences being:
  * The find commands will list the files and directories that would be deleted from the destination directory
  * The rsync command to copy files from the source to destination will only list which files and directories would be copied
- * Instead of dropping or dumping any data from the source and destination databases, a successful connection only will be checked (!!SOON!!)
+ * Instead of dropping or dumping any data from the source and destination databases, a successful connection only will be checked
  
  This script should be used to test the results of copying before running the live version of the script. It should only be run from a shell session not a browser.
  

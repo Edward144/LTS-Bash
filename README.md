@@ -46,9 +46,14 @@
  I am not planning on allowing a remote destination directory. As the script is designed to be stored within the destination directory, so you should have local access to it anyway.
 
 ## lts-test
- The lts-test.sh script is an exact copy of the main lts.sh script. The only difference currently is that it will not copy any files from the source to destination directory.
- 
- !!It is planned to have it also list only files to be deleted from the destination directory and test that each database can be connected to successfully without actually dropping or dumping any data.!!
+ The lts-test.sh script is an exact copy of the main lts.sh script. The differences being:
+ * The find commands will list the files and directories that would be deleted from the destination directory
+ * The rsync command to copy files from the source to destination will only list which files and directories would be copied
+ * Instead of dropping or dumping any data from the source and destination databases, a successful connection only will be checked (!!SOON!!)
  
  This script should be used to test the results of copying before running the live version of the script. It should only be run from a shell session not a browser.
  
+## Windows line breaks
+ You may encounter error "$'\r': command not found" due to Windows adding line break characters to the files which cannot be interpreted correctly when the script is run. A workaround that I have been using for this is to copy the contents of lts.sh / lts-test.sh and then paste it into nano in a shell session. 
+ 
+ So SSH into your server, go to the directory where you wish the script to sit and create it via "nano lts.sh", then past in the copied contents.

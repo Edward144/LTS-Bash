@@ -59,9 +59,9 @@ echo "Deleting files from destination directory:" $destinationDir >> $outputFile
 printf "Deleting files from destination directory: ${RED}${destinationDir}${NC}"
 
 ##Directories
-find $destinationDir -mindepth 1 -not \( -path "*${excludeDirs[0]}" $(printf -- '-o -path "*%s" ' "${excludeDirs[@]:1}") \) -type d ! -name "lts.sh" -a ! -name "${outputFilename}" -a ! -name "lts-copy.php" -a ! -name "lts-php.php" -a ! -name "lts-test.sh" -exec rm -rf {} \;
+find $destinationDir -mindepth 1 -not \( -path "*${excludeDirs[0]}" $(printf -- '-o -path "*%s" ' "${excludeDirs[@]:1}") \) -type d ! -name "lts.sh" -a ! -name "${outputFilename}" -a ! -name "lts-copy.php" -a ! -name "lts-php.php" -a ! -name "lts-test.sh" -printf "%p\n" -exec basename {} \;
 ##Files
-find $destinationDir -mindepth 1 -not \( -path "*${excludeFiles[0]}" $(printf -- '-o -path "*%s" ' "${excludeFiles[@]:1}") \) -type f ! -name "lts.sh" -a ! -name "${outputFilename}" -a ! -name "lts-copy.php" -a ! -name "lts-php.php" -a ! -name "lts-test.sh" -exec rm {} \;
+find $destinationDir -mindepth 1 -not \( -path "*${excludeFiles[0]}" $(printf -- '-o -path "*%s" ' "${excludeFiles[@]:1}") \) -type f ! -name "lts.sh" -a ! -name "${outputFilename}" -a ! -name "lts-copy.php" -a ! -name "lts-php.php" -a ! -name "lts-test.sh" -exec basename {} \;
 
 echo "<strong>...Complete</strong><br>" >> $outputFile
 printf "${GREEN}...Complete${NC}\n"

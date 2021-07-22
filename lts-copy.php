@@ -3,8 +3,8 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script>
 			$(document).ready(function() {
-				if(confirm('Are you sure you want to copy live to sandbox? This cannot be undone once started.')) {
-					/*$.ajax({
+				if(confirm('Are you sure you want to copy source to destination? This cannot be undone once started.')) {
+					$.ajax({
 						url: 'lts-php.php',
 						method: 'GET',
 						async: true,
@@ -14,7 +14,7 @@
 						error: function(a, b, c) {
 							$("body").prepend(c);
 						}
-					});*/
+					});
 				}
 				else {
 					$("body").prepend("<h1>Nothing to do. <a href='./'>Return To Site</a>")
